@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;800&display=swap');
 :root {
   --black: #000;
   --white: #fff;
@@ -40,15 +40,16 @@ body {
 header {
   display: flex;
   width: 100%;
+  height: max-content;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  font-size: clamp(2rem, 4.5vw, 8rem);
-  margin-top: 1em;
+  font-size: clamp(2rem, 2.5vw, 8rem);
+  margin: 1em 0;
 }
 
 header h1 {
-  transform: scaleY(2);
+  transform: scaleY(5);
+  font-weight: 200;
 }
 
 .racoon-logo {
@@ -81,6 +82,10 @@ header h1 {
   border: none;
   background: inherit;
   cursor: pointer;
+}
+
+.expandable button:hover {
+  font-size: 4rem;
 }
 
 @media (max-width: 700px) {
