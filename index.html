@@ -7,19 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MAPACHE</title>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.22/bundled/lenis.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7dae29f2cb.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
       <h1>MALDITO</h1>
-      <img src="/racoon.png" alt="mapache logo" class="racoon-logo" />
+      <img src="/racoon.png" alt="mapache logo" class="header-logo" />
       <h1>MAPACHE</h1>
     </header>
     <nav class="sidebar hidden">
       <ul>
-        <li>logo</li>
-        <li>2d</li>
-        <li>3d</li>
-        <li></li>
+        <li>
+          <button>
+            <img src="/racoon.png" alt="mapache logo" class="nav-logo" />
+          </button>
+        </li>
+        <li><button>2D</button></li>
+        <li><button>3D</button></li>
+        <li>
+          <button><i class="fa-solid fa-music"></i></button>
+        </li>
+        <li>
+          <button><i class="fa-solid fa-at"></i></button>
+        </li>
       </ul>
     </nav>
     <main>
@@ -39,13 +52,13 @@
         </p>
       </div>
       <div class="work-container">
-        <section class="expandable 2d">
+        <section class="card 2d">
           <button>2D</button>
         </section>
-        <section class="expandable 3d">
+        <section class="card 3d">
           <button>3D</button>
         </section>
-        <section class="expandable audio">
+        <section class="card audio">
           <button>SOUND</button>
         </section>
       </div>

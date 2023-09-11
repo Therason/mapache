@@ -37,6 +37,40 @@ body {
   display: none;
 }
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  font-size: 2rem;
+  padding: 0.5em;
+  border-right: 1px solid white;
+}
+
+.sidebar ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar ul::before,
+.sidebar ul::after {
+  content: '';
+}
+
+.sidebar button {
+  border: none;
+  background: none;
+  color: white;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.nav-logo {
+  width: 1em;
+}
+
 header {
   display: flex;
   width: 100%;
@@ -52,7 +86,7 @@ header h1 {
   font-weight: 200;
 }
 
-.racoon-logo {
+.header-logo {
   width: clamp(2rem, 15vw, 20rem);
   height: clamp(2rem, 15vw, 20rem);
   mix-blend-mode: difference;
@@ -70,13 +104,13 @@ header h1 {
   padding: 1em 1em 2em 1em;
 }
 
-.expandable {
+.card {
   width: 500px;
   height: 300px;
   background: gray;
 }
 
-.expandable button {
+.card button {
   width: 100%;
   height: 100%;
   border: none;
@@ -84,8 +118,16 @@ header h1 {
   cursor: pointer;
 }
 
-.expandable button:hover {
+.card button:hover {
   font-size: 4rem;
+}
+
+.open-container {
+  font-size: clamp(2rem, 2.5vw, 8rem);
+  height: 90vh;
+  display: grid;
+  place-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 700px) {
@@ -94,7 +136,7 @@ header h1 {
     font-size: clamp(1rem, 10vw, 8rem);
   }
 
-  .racoon-logo {
+  .header-logo {
     width: clamp(2rem, 30vw, 20rem);
     height: clamp(2rem, 30vw, 20rem);
   }
