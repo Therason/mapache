@@ -27,6 +27,12 @@ li {
   list-style: none;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+  background: inherit;
+}
+
 body {
   background: var(--black);
   color: var(--white);
@@ -45,6 +51,8 @@ body {
   font-size: 2rem;
   padding: 0.5em;
   border-right: 1px solid white;
+  z-index: 200;
+  background: black;
 }
 
 .sidebar ul {
@@ -127,11 +135,28 @@ header h1 {
 }
 
 .open-container {
-  font-size: clamp(2rem, 2.5vw, 8rem);
-  height: 90vh;
+  font-size: 4rem;
+  height: 100vh;
+  background: gray;
   display: grid;
   place-items: center;
   justify-content: center;
+}
+
+.open-container * {
+  background: inherit;
+  border: none;
+  color: black;
+}
+
+.cover-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  z-index: 2;
 }
 
 @media (max-width: 700px) {

@@ -1,3 +1,5 @@
+gsap.registerPlugin(Flip)
+
 // main page nav from clicking cards
 const cardNav = (e) => {
   const main = document.querySelector('main')
@@ -6,21 +8,33 @@ const cardNav = (e) => {
 
   // gsap.to(e.target, { rotation: 360, x: 100, duration: 1 })
   e.target.style['font-size'] = '4rem'
-  gsap.to(e.target.parentElement, {
-    width: '100vw',
-    height: '100vh',
-    duration: 1,
-  })
-  console.log(e.target.style)
+  e.target.style['cursor'] = 'auto'
+  console.log(e.target.childNodes)
 
-  // nav.classList.remove('hidden')
-  // header.classList.add('hidden')
+  // save state
+  const state = Flip.getState(e.target.parentElement)
+
+  // dom changes
+  e.target.parentElement.classList.add('cover-page')
+
+  // transition
+  Flip.from(state, {
+    duration: 0.5,
+    ease: 'power1.inOut',
+    scale: true,
+    onComplete() {
+      nav.classList.remove('hidden')
+      header.classList.add('hidden')
+      window.lenis.scrollTo(0, { immediate: true })
+      main.innerHTML = `<div class='open-container'>${e.target.outerHTML}</div>`
+    },
+  })
+
   // main.innerHTML = `<div class='open-container'><h1>${
   //   e.target.innerHTML === 'SOUND'
   //     ? '<i class="fa-solid fa-music"></i>'
   //     : e.target.innerHTML
   // }</h1></div>`
-  window.lenis.scrollTo(0, { immediate: true })
 }
 
 const initNav = () => {
@@ -65,16 +79,16 @@ const createHome = () => {
   </div>
   <div class="work-container">
     <section class="card game">
-      <button>GAME 1</button>
+      <button><h1>G1</h1></button>
     </section>
     <section class="card game">
-      <button>GAME 2</button>
+      <button><h1>G2</h1></button>
     </section>
     <section class="card 2d">
-      <button>2D</button>
+      <button><h1>2D</h1></button>
     </section>
     <section class="card 3d">
-      <button>3D</button>
+      <button><h1>3D</h1></button>
     </section>
   </div>
   `
