@@ -1,4 +1,6 @@
 const lenis = new Lenis()
+// not sure if this will cause issues
+window.lenis = lenis
 
 // lenis.on('scroll', (e) => {
 //   console.log(e)

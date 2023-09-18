@@ -100,12 +100,12 @@ header h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
-  padding: 1em 1em 2em 1em;
+  justify-content: space-between;
+  padding: 2em 10vw;
 }
 
 .card {
-  width: 500px;
+  flex: 1;
   height: 300px;
   background: gray;
 }
@@ -120,6 +120,10 @@ header h1 {
 
 .card button:hover {
   font-size: 4rem;
+}
+
+.game {
+  flex-basis: 100%;
 }
 
 .open-container {
