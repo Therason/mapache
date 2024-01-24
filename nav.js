@@ -29,12 +29,6 @@ const cardNav = (e) => {
       main.innerHTML = `<div class='open-container'>${e.target.outerHTML}</div>`
     },
   })
-
-  // main.innerHTML = `<div class='open-container'><h1>${
-  //   e.target.innerHTML === 'SOUND'
-  //     ? '<i class="fa-solid fa-music"></i>'
-  //     : e.target.innerHTML
-  // }</h1></div>`
 }
 
 const initNav = () => {
